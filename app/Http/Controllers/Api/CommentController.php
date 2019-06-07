@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Repository\PostRepository;
-use App\Repository\CommentRepository;
+use App\Repositories\PostRepository;
+use App\Repositories\CommentRepository;
 
 class CommentController extends Controller
 {

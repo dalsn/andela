@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Repository\UserRepository;
-use App\Repository\PostRepository;
+use App\Repositories\UserRepository;
+use App\Repositories\PostRepository;
 
 class UserController extends Controller
 {

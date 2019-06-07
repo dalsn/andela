@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repositories;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\HandlerStack;
@@ -9,7 +9,7 @@ use Doctrine\Common\Cache\FilesystemCache;
 use Kevinrob\GuzzleCache\Strategy\PrivateCacheStrategy;
 use Kevinrob\GuzzleCache\Storage\DoctrineCacheStorage;
 
-class ApiRepository
+class ApiRepository implements RepositoryInterface
 {
     protected $url;
     protected $client;
