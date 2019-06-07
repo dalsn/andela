@@ -15,3 +15,6 @@ use Illuminate\Http\Request;
 
 Route::get('/user', 'Api\UserController@index');
 Route::get('/user/{id}', 'Api\UserController@view');
+
+Route::get('/post', 'Api\PostController@index');
+Route::get('/post/{id}', 'Api\PostController@view');
