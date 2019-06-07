@@ -8,9 +8,19 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class UserTest extends TestCase
 {
-    $response = $this->json('GET', '/user', [])->assertStatus(200);
+    public function testGetAllUser()
+    {
+        $response = $this->json('GET', 'api/user', [])->assertSuccessful();
+    }
 
-    $response->assertJson([
-        'name', 'email', 'username',
-    ]);
+    public function testGetUserWithPosts()
+    {
+        $response = $this->json('GET', 'api/user/1', [])->assertSuccessful();
+
+        $response->assertJson([
+            'name' => "Leanne Graham",
+            'username' => "Bret",
+            'email' => "Sincere@april.biz"
+        ]);
+    }
 }
