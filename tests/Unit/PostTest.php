@@ -24,6 +24,6 @@ class PostTest extends TestCase
             'body'
         ]);
 
-        // $this->assertArrayHasKey('posts', json_decode($response->content(), true));
+        $this->assertArrayHasKey('comments', json_decode($response->content(), true));
     }
 }
