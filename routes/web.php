@@ -14,5 +14,5 @@
 use App\Repository\ApiRepository;
 
 Route::get('/', function () {
-    var_dump((new ApiRepository("https://jsonplaceholder.typicode.com/users"))->getAll());
+    return view('welcome');
 });
