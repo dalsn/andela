@@ -18,3 +18,6 @@ Route::get('/user/{id}', 'Api\UserController@view');
 
 Route::get('/post', 'Api\PostController@index');
 Route::get('/post/{id}', 'Api\PostController@view');
+
+Route::get('/comment', 'Api\CommentController@index');
+Route::get('/comment/{id}', 'Api\CommentController@view');
