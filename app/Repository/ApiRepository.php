@@ -40,4 +40,11 @@ class ApiRepository
         $response = $this->client->get($this->url);
         return json_decode($response->getBody(), true);
     }
+
+    public function get($id)
+    {
+        $url = $this->url . "/{$id}";
+        $response = $this->client->get($url);
+        return json_decode($response->getBody(), true);
+    }
 }

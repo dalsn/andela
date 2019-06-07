@@ -22,5 +22,7 @@ class UserTest extends TestCase
             'username' => "Bret",
             'email' => "Sincere@april.biz"
         ]);
+
+        $this->assertArrayHasKey('posts', json_decode($response->content(), true));
     }
 }

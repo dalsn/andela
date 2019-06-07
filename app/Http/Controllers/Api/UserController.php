@@ -5,29 +5,28 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repository\UserRepository;
-
-use Illuminate\Support\Arr;
+use App\Repository\PostRepository;
 
 class UserController extends Controller
 {
-    public $userRepo;
+    public $postRepo;
 
-    public function __construct(UserRepository $userRepo)
+    public function __construct(UserRepository $userRepo, PostRepository $postRepo)
     {
         $this->userRepo = $userRepo;
+        $this->postRepo = $postRepo;
     }
 
     public function index()
     {
-        return json_encode($this->userRepo->getAll());
+        return response()->json($this->userRepo->getAll());
     }
 
     public function view($id)
     {
-        $users = $this->userRepo->getAll();
+        $user = $this->userRepo->get($id);
+        $user['posts'] = $this->postRepo->getUserPosts($id);
 
-        $user = Arr::first($users, function ($value, $key) {
-            return $users['id'] == $id;
-        });
+        return response()->json($user);
     }
 }
